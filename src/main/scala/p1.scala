@@ -150,13 +150,13 @@ object p1 {
       println("Enter the year you would like to know the projected percentage of")
       val year = readLine
       if (db == "netflix1") {
-        spark.sql(s"select (-($year-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
+        spark.sql(s"select (($year-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
       }
       else if (db == "hulu1") {
-        spark.sql("select (-(2021-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
+        spark.sql("select (($year+231)/0.115) as `Expected TV Show percentage for 2021`").show()
       }
-      else if (db == "hulu1") {
-        spark.sql("select (-(2021-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
+      else if (db == "disney1") {
+        spark.sql("select ((2021-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
       }
       else {
         println("not a valid database")
