@@ -143,20 +143,20 @@ object p1 {
       val year = readInt()
       println("Do you want to see movies or Tv")
       val type_given = readLine()
-      spark.sql(s"select round((((select count(title) as `Count` from $db where type='$type_given' and release_year = $year)/(SELECT count(*) FROM $db where type ='$type_given')) * 100),2) as `Percentage of $type_given` ").show()
+      spark.sql(s"select round( ( ( (select count(title) as `Count` from $db where type='$type_given' and release_year = $year)/(SELECT count(*) FROM $db where type ='$type_given')) * 100),2) as `Percentage of $type_given` ").show()
 
     }
     else if(a ==7) {
       println("Enter the year you would like to know the projected percentage of")
       val year = readLine
       if (db == "netflix1") {
-        spark.sql(s"select (($year-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
+        spark.sql(s"select (($year-2004)/1.01) as `Expected TV Show percentage for $year`").show()
       }
       else if (db == "hulu1") {
-        spark.sql("select (($year+231)/0.115) as `Expected TV Show percentage for 2021`").show()
+        spark.sql(s"select (($year+2016)/0.306) as `Expected TV Show percentage for $year`").show()
       }
       else if (db == "disney1") {
-        spark.sql("select ((2021-2004)/6.58) as `Expected TV Show percentage for 2021`").show()
+        spark.sql(s"select (($year-2003)/1.75) as `Expected TV Show percentage for $year`").show()
       }
       else {
         println("not a valid database")
