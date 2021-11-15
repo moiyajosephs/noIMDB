@@ -29,3 +29,11 @@ ALL user interaction must come purely from the console application
 4) Which databse has more TV Shows
 4) Are there common TV shows
 6) Future query: Future percentage of TV shows to be released in a given year
+
+
+Datasets gotten from Kaggle.com:
+<ul>
+    <li> <a href="https://www.kaggle.com/shivamb/disney-movies-and-tv-shows"> Disney+ datasets </a> </li>
+    <li> <a href="https://www.kaggle.com/shivamb/hulu-movies-and-tv-shows"> Hulu datasets </a> </li>
+    <li> <a href="https://www.kaggle.com/abhikaggle8/netflix-rating-distributions"> Netflix datasets </a> </li>
+</ul>
